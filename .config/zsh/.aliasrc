@@ -1,0 +1,45 @@
+#!/bin/zsh
+# Aliases
+
+alias "zrel"="source $ZDOTDIR/.zshrc"
+alias "zconf"="$VISUAL $ZDOTDIR/.zshrc && zrel"
+
+alias "xo"="xdg-open"
+alias "ls"='ls --color=auto'
+alias "yt"="yt-dlp"
+alias "yt-music"="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 320k"
+
+alias "DResolve"="LD_PRELOAD=/usr/lib64/libglib-2.0.so /opt/resolve/bin/resolve"
+alias "zsh-conf"="micro $HOME/.config/zsh/.zshrc"
+alias "chafa-full"='chafa --center true --scale max --clear'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias "wc-xdg"="ls -a | wc -l"
+alias "grep"="grep --color=auto"
+alias "npp"="ncmpcpp"
+alias "hibernate"="systemctl hibernate"
+alias "syslyze"="systemd-analyze"
+alias config='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias "current_wal"="chafa ~/.config/hypr/scripts/current_wal"
+alias "e"="$EDITOR"
+
+### In case I prefer to use toothfetch from an alias instead of a script...
+#alias "toothfetch"="clear && fastfetch -c $HOME/.config/fastfetch/toothfetch.jsonc -l $(randimg.sh $HOME/Pictures/neofetch_images/t)"
+
+alias "yeet-orphans"="paru -Qqd | paru -Rnsu -"
+
+## Aliases that makes using Wayland/XWayland better
+#alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && export XWAYLAND_NO_GLAMOR=1 && codium" # Disables GPU acceleration
+alias "obsidian"="echo 'WARNING : using an alias because of Wayland lmfao' && obsidian --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations" # Enables Wayland support
+alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && codium --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
+alias "code"="echo 'WARNING : using an alias because of Wayland lmfao' && code --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
+
+## Aliases specific to some workflows
+alias "phps"="php -S localhost:8008 & firefox localhost:8008" # php moment
+
+## Less useful aliases...
+alias "mpv-term"="mpv --no-config --no-pause --vo=tct"
+alias "nm-shutup"="sudo systemctl restart NetworkManager"
+alias "mb"="chafa $HOME/Pictures/random_stuff/neuron.png"
+alias "vibe"="sh ~/.local/bin/vibe.sh"
+alias "vibe-term"="mpv-term ~/Pictures/gifs/vibe_final.gif --loop"
+#alias "neofetch"="neofetch && mpv --no-video ~/Documents/sfx/Vine\ boom\ sound\ effect\ \[Oc7Cin_87H4\].mp3 2>&1 /dev/null"

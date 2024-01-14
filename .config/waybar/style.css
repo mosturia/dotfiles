@@ -1,0 +1,102 @@
+/* All of the configs come from https://github.com/justinlime/dotfiles/tree/main/non-nix/waybar with some tweaks :)
+*/
+@import url("../../.cache/wal/colors-gtk3.css");
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: RobotoMono Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+/*
+#window{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+window#waybar {
+    background: @color0Alpha;
+    color: @foreground;
+}
+
+#workspaces {
+    background: transparent;
+    margin: 5px 5px;
+    padding: 8px 5px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 100px;
+    color: @color16;
+    background: @color0Alpha;
+    transition: all 0.3s cubic-bezier(.11, 1.09, .6, .96);
+}
+
+#workspaces button.active {
+	padding: 0 30px;
+    background-color: @color2Alpha;
+}
+
+#workspaces button:hover {
+    background-color: @color2Alpha;
+}
+
+#tray, #pulseaudio, #network, #battery,
+#custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward, #cpu, #memory, #custom-notification, #mpris{
+    background: @color0Alpha;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+#custom-launcher {
+    color: @color5;
+    background: @color0Alpha;
+    border-radius: 0px 100px 100px 0px;
+    padding: 0px 30px 0px 10px;
+    font-size: 28px;
+    transition: all 0.3s ease-in-out;
+}
+
+#mpris{
+	border-radius: 100px;
+	background: linear-gradient(45deg, @color2Alpha 0%, @color0Alpha 100%);
+	color: @color6;
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+#tray, #pulseaudio, #network, #battery, #cpu, #memory, #custom-notification{
+    padding: 0 10px;
+}
+
+#tray{
+	margin-right: 10px;
+	border-radius: 100px;
+}
+
+#battery{
+	border-radius: 100px 0 0 100px;
+	padding-left: 20px;
+}
+
+#custom-notification{
+	border-radius: 0 100px 100px 0;
+	padding-right: 20px;
+
+}
+
+#clock {
+    background: @color0Alpha;
+    border-radius: 100px 0px 0px 100px;
+    padding: 10px 10px 15px 25px;
+    margin-left: 7px;
+    font-weight: bold;
+    font-size: 16px;
+}

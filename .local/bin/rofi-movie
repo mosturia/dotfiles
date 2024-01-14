@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chosen=$(find "$HOME/Videos/" -name '*.mp4' -o -name '*.mov' -o -name '*.mkv' -o -name '*.webm' | sort | rofi -dmenu -i -p "  ")
+mpv "$chosen"
+

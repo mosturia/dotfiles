@@ -1,0 +1,4 @@
+#!/bin/sh
+chosen=$(find "$HOME/Music/" | sort | rofi -dmenu -i -p " 󰎆 ")
+mpv "$chosen"
+

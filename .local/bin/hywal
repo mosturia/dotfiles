@@ -1,0 +1,27 @@
+#!/bin/sh
+# Small script to switch to a wallpaper using swaybg or swww and update pywal colors.
+# Used by the rofi "frontend" accessible with SUPER+W.
+
+# INFO : both swaybg and swww are supported in this script, so swap at will by commenting/uncommenting anything related to either.
+# I prefer to use swaybg since I don't care about animated wallpapers and swww takes a lot of system resources.
+
+# In case the wallpaper is a symlink, since ~/.config/hypr/scripts/current_wal is one
+wallpaper=$(realpath "$1")
+if test $wallpaper -z
+then
+	echo "No selection - skipping..."
+else
+	echo "Setting wallpaper $wallpaper"
+	ln -sf "$wallpaper" "$HOME/.config/hypr/scripts/current_wal" # Creating a symlink in order to keep the current wallpaper for next boot if using swaybg
+	killall waybar # Waybar and swaync need to be killed as they don't refresh their config dynamically
+	killall swaybg
+	swaync-client --reload-config 
+	wal -i "$wallpaper"
+	pywalfox update
+	pywal-obsidianmd.sh "$HOME/Documents/Notes"
+	waybar &
+	swaync &
+	#swww img "$wallpaper" # Variables are set in ~/.config/hypr/conf/env.conf
+	swaybg -i "$wallpaper" -m fill &
+fi
+killall hywal # In case a previous attempt at switching was mande and Swaybg was too slow...

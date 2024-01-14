@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#neofetch --config "/home/$USER/.config/neofetch/config.tooth.conf"
+
+if test "$1" = "-c" 
+then
+	clear
+fi
+fastfetch -c "$HOME/.config/fastfetch/toothfetch.jsonc" -l "$(find $XDG_DATA_HOME/fetch_logos/toothfetch/ -type f | sort -R | tail -n 1)"

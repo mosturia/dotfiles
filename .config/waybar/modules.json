@@ -1,0 +1,116 @@
+{
+    "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-charging": "  {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-plugged": "  {capacity}% ",
+        "states": {
+            "critical": 15,
+            "good": 95,
+            "warning": 30
+        }
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂚<span foreground='red'><sup></sup></span>",
+            "none": "󰂚",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "clock": {
+        "format": " {:%a %d %b %H:%M}",
+        "format-alt": " {:%H:%M}",
+        "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "format-alt": "󰻠 {avg_frequency} GHz",
+        "interval": 5
+    },
+    "custom/launcher": {
+        "format": "",
+        "tooltip": "false",
+        "on-click": "rofi -show drun -show-icons"
+    },
+	"mpris": {
+	        "format": "{player_icon} {dynamic}",
+	        "format-paused": "{status_icon} <i>{dynamic}</i>",
+	        "player-icons": { 
+	            "default": "󰐌",
+	            "mpv": "󰎆"
+	        },
+	        "status-icons": {
+	            "paused": "󰏥"
+	        },
+	        // "ignored-players": ["firefox"]
+	        "max-length": 60,
+	        "interval": 1
+	    },
+   "memory": {
+        "format": "󰍛 {}%",
+        "format-alt": "󰍛 {used}/{total} GiB",
+        "interval": 5
+    },
+    "network": {
+        "on-click": "kitty -e nmtui",
+        "format-disconnected": "󰖪 0% ",
+        "format-ethernet": "󰈀 100% ",
+        "format-linked": "{ifname} (No IP)",
+        "format-wifi": "  {signalStrength}%",
+        "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}"
+    },
+    "position": "top",
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "format-muted": "󰝟",
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 8
+    },
+    "wlr/workspaces": {
+        "active-only": false,
+        "all-outputs": false,
+        "disable-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "sort-by-number": true,
+            "urgent": ""
+        },
+        "on-click": "activate",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1"
+    }
+}

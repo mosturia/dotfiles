@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ]; then
+  	echo 'This script displays a picture of Toothless the dragon using chafa (https://github.com/hpjansson/chafa). The images are stored locally, in $XDG_DATA_HOME/tsotd.'
+	echo 'The script also prints the file path.'
+	echo 'Options :\n-h : display this help\n-c : clears the terminal before displaying the picture\n-p : only prints the file path. /!\ The file path may contain spaces'
+else
+	FILE=$(find "$XDG_DATA_HOME/tsotd" -type f | sort -R | tail -n 1)
+  	if [ "$1" = "-c" ]; then
+  	  	clear
+  	  	fi
+	if [ "$1" = "-p" ]; then
+		echo "$FILE"
+	else
+		chafa --animate on --scale max --center true --margin-bottom 2 "$FILE" # set the margin to whatever height your prompt takes
+		FILE_OUT="$(echo $FILE | sed 's|^/home/[^/]*|~|')" # Replaces home by ~
+		#echo "λ $FILE_OUT" # probably becoming an option soon
+	fi
+fi

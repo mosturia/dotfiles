@@ -1,0 +1,3 @@
+#!/bin/sh
+
+swaylock -i "~/.config/hypr/scripts/current_wal" --clock

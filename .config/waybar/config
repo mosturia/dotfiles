@@ -1,0 +1,33 @@
+[
+  {
+    "height": 20,
+    "layer": "top",
+    "position": "top",
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-top": 0,
+    "include": [
+      "~/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+      "custom/launcher",
+      //"custom/playerctl#backward",
+      //"custom/playerctl#play",
+      //"custom/playerctl#foward",
+      //"custom/playerlabel",,
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "mpris"
+    ],
+    "modules-right": [
+      "tray",
+      "battery",
+      "pulseaudio",
+      "network",
+      "custom/notification",
+      "clock"
+    ]
+  }
+]

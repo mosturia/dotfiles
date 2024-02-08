@@ -11,17 +11,30 @@ if test $wallpaper -z
 then
 	echo "No selection - skipping..."
 else
+	echo "=========================="
 	echo "Setting wallpaper $wallpaper"
+	echo "=========================="
+	
 	ln -sf "$wallpaper" "$HOME/.config/hypr/scripts/current_wal" # Creating a symlink in order to keep the current wallpaper for next boot if using swaybg
 	killall waybar # Waybar and swaync need to be killed as they don't refresh their config dynamically
 	killall swaybg
-	swaync-client --reload-config 
+	killall swaync
+
+	echo "=========================="
+	echo "Updating pywal colors"
+	echo "=========================="
+
 	wal -i "$wallpaper"
 	pywalfox update
 	pywal-obsidianmd.sh "$HOME/Documents/Notes"
+
+	echo "=========================="
+	echo "Launching waybar and wallpaper daemon"
+	echo "=========================="
+
 	waybar &
 	swaync &
 	#swww img "$wallpaper" # Variables are set in ~/.config/hypr/conf/env.conf
 	swaybg -i "$wallpaper" -m fill &
 fi
-killall hywal # In case a previous attempt at switching was mande and Swaybg was too slow...
+killall hywal # In case a previous attempt at switching was made and swaybg was too "slow"...

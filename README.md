@@ -83,13 +83,12 @@ Does the same but with videos, with `SUPER+shift+V`. Your videos must be in `~/V
 
 ### hywal
 
-Hywal is a shell script that will set the chosen wallpaper. It also executes `wal -i <wallpaper path>`, and refreshes the pywal utilities that do not have an autorefresh option like pywalfox.
+Hywal is a shell script that will set the wallpaper passed in argument. It also executes `wal -i <wallpaper path>`, and refreshes the pywal utilities that do not have an autorefresh option.
 
 It also writes the wallpaper file path to `~/.config/hypr/scripts/current_wal`, for swaylock to use the wallpaper and for it to
-be kept when restarting Hyprland. As such, the wallpaper path must be absolute.
+be kept when restarting Hyprland. As such, the wallpaper path must be absolute, which hywal manages by using the `realpath`.
 
-You should use rofi-paper instead (bound to mainMod+Shift+P in hyprland.conf), as it looks in `~/Pictures/Wallpapers` and ensures that
-the path stays absolute.
+As mentioned previously, you can use the [rofi-paper](#rofi-paper) script to set a wallpaper.
 
 The script also kills swaync and waybar, as they can't dynamically fetch the new color cache.
 
@@ -101,9 +100,14 @@ This script is a neofetch/fastfetch wrapper that uses the config file in `~/.con
 
 Other than that and displaying "Toothless λ Krokmou" in elder futhark runes, it's literally a copy of my default neofetch/fastfetch configs.
 
+#### Disclaimer
+
+If you choose fastfetch as a backend, your terminal emulator image protocol might not be used by chafa, hence why I set the logo type
+to `kitty`. Feel free to change it to whatever protocol your emulator may use.
+
 ### tsotd
 
-Displays a shot of Toothless the dragon in the terminal. The images are located in `$XDG_DATA_HOME/tsotd`. It uses chafa for maximum compatibility across terminal emulator, and even works in a TTY! However, best results are achieved using Kitty.
+Displays a shot of Toothless the dragon in the terminal. The images are located in `$XDG_DATA_HOME/tsotd`. It uses chafa for maximum compatibility across terminal emulators.
 
 Run
 

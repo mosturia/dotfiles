@@ -12,25 +12,25 @@ This repository contains my Arch Linux dotfiles.
 
 This config may or may not work depending on your config, especially since I'm running an AMD+Nvidia Optimus setup. I'm not providing an install script (at least yet), so I'd recommend to browse through the files and borrow what you want instead.
 
-## Config details 
+## Config details
 
 - OS : Arch Linux
 - DE/WM : Hyprland
-- Qt/GTK theme : Sweet Ambar Blue/Material Black Blueberry
+- Qt/GTK theme : Sweet Ambar Blue/Graphite-Dark
 - Shell : zsh
 - Terminal emulator : [kitty](https://sw.kovidgoyal.net/kitty/)
 - Color scheme generation utility : [pywal](https://github.com/dylanaraps/pywal)
 - Audio EQ (and more) : [EasyEffects](https://github.com/wwmm/easyeffects)
-- Text editors : Micro, VSCode, VSCodium, Neovim (barely)
+- Text editors : Micro, VSCode, VSCodium, Neovim with lazyvim (barely, hasn't changed)
 - AUR helper/wrapper : [paru](https://github.com/Morganamilo/paru)
 - App launcher : rofi
 - Top bar : Waybar
 - Screen locker : swaylock-effects
-- Wallpaper setter : swaybg
+- Wallpaper setter : swww (I changed my mind)
 - Cursors : Bibata-Modern-Classic
 - Firefox userChrome : [Onebar](https://codeberg.org/Freeplay/Firefox-Onebar)
 - Terminal image display utility: chafa
-
+- `ls` replacement : eza
 
 ## Details
 
@@ -56,13 +56,13 @@ in a shell to set the config.
 
 ```shell
 paru -S hyprland xorg-xwayland swaybg waybar rofi python-pywal polkit-kde-agent \
-xdg-desktop-portal xdg-desktop-portal-hyprland
+xdg-desktop-portal xdg-desktop-portal-hyprland eza
 ```
 
 ### AUR
 
 ```shell
-paru -S swaync rofi-power-menu python-pywalfox swaylock-effects
+paru -S swaync swww rofi-power-menu python-pywalfox swaylock-effects
 ```
 
 ## Scripts found in my dotfiles
@@ -86,7 +86,7 @@ Does the same but with videos, with `SUPER+shift+V`. Your videos must be in `~/V
 Hywal is a shell script that will set the wallpaper passed in argument. It also executes `wal -i <wallpaper path>`, and refreshes the pywal utilities that do not have an autorefresh option.
 
 It also writes the wallpaper file path to `~/.config/hypr/scripts/current_wal`, for swaylock to use the wallpaper and for it to
-be kept when restarting Hyprland. As such, the wallpaper path must be absolute, which hywal manages by using the `realpath`.
+be kept when restarting Hyprland (last part irrelevant with swww). As such, the wallpaper path must be absolute, which hywal manages by using `realpath`.
 
 As mentioned previously, you can use the [rofi-paper](#rofi-paper) script to set a wallpaper.
 
@@ -96,7 +96,7 @@ It's compatible with swww, but you must uncomment the lines related to it.
 
 ### toothfetch
 
-This script is a neofetch/fastfetch wrapper that uses the config file in `~/.config/neofetch/config.tooth.conf` or `~/.config/fastfetch/toothfetch.jsonc`, and displays an image of Toothless the dragon, contained in `~/Pictures/neofetch_images/t`. 
+This script is a neofetch/fastfetch wrapper that uses the config file in `~/.config/neofetch/config.tooth.conf` or `~/.config/fastfetch/toothfetch.jsonc`, and displays an image of Toothless the dragon, contained in `~/.local/share/fetch_logos/toothfetch`.
 
 Other than that and displaying "Toothless λ Krokmou" in elder futhark runes, it's literally a copy of my default neofetch/fastfetch configs.
 

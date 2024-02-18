@@ -10,3 +10,4 @@ bindkey -s '^o' '$EDGUI .^M'
 ## You get the idea...
 bindkey -s '^n' 'newfile^M'
 bindkey -s '^P' 'toothfetch^M'
+bindkey '^R' history-incremental-search-backward

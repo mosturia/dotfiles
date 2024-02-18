@@ -1,9 +1,9 @@
 * {{
-    active-background: {color2};
+    active-background: {color2}88;
     active-foreground: @foreground;
     normal-background: transparent;
     normal-foreground: @foreground;
-    urgent-background: {color1};
+    urgent-background: {color1}88;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,11 +13,11 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: {color1};
+    selected-active-background: {color1}AA;
     selected-active-foreground: @foreground;
-    selected-normal-background: {color2};
+    selected-normal-background: {color2}AA;
     selected-normal-foreground: @foreground;
-    selected-urgent-background: {color3};
+    selected-urgent-background: {color3}AA;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
@@ -54,19 +54,17 @@
 
 #textbox-prompt-colon {{
     expand: false;
-    str: ":";
+    str: ">";
     margin: 0px 0.3em 0em 0em;
     text-color: @normal-foreground;
 }}
 
 #listview {{
     fixed-height: 0;
-    border: 2px 0px 0px;
     border-color: @border-color;
     spacing: 2px;
     scrollbar: true;
     padding: 2px 0px 0px;
-    background-color: @background;
 }}
 
 #element {{
@@ -75,7 +73,7 @@
 }}
 
 #element-text, element-icon {{
-    background-color: inherit;
+    background-color: @normal-background;
     text-color:       inherit;
 }}
 
@@ -126,15 +124,12 @@
 
 #scrollbar {{
     width: 4px;
-    border: 0;
     handle-width: 8px;
     padding: 0;
     border-radius: 100px;
 }}
 
 #sidebar {{
-    border: 2px 0px 0px;
-    border-color: @border-color;
     border-radius: 100px;
 }}
 
@@ -150,8 +145,6 @@
 #inputbar {{
     spacing: 0;
     text-color: @normal-foreground;
-    padding: 1px;
-    
 }}
 
 #case-indicator {{

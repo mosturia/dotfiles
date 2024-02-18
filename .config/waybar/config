@@ -1,32 +1,21 @@
 [
   {
-    "height": 20,
+    "height": 36,
+	  "spacing": 10,
     "layer": "top",
     "position": "top",
-    "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "margin-top": 0,
     "include": [
       "~/.config/waybar/modules.json"
     ],
     "modules-left": [
-      "custom/launcher",
-      //"custom/playerctl#backward",
-      //"custom/playerctl#play",
-      //"custom/playerctl#foward",
-      //"custom/playerlabel",,
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "tray"
     ],
     "modules-center": [
-      "mpris"
+      "group/media"
     ],
     "modules-right": [
-      "tray",
-      "battery",
-      "pulseaudio",
-      "network",
-      "custom/notification",
+      "group/general",
       "clock"
     ]
   }

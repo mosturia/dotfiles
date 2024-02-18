@@ -37,7 +37,7 @@ parse_git_branch() {
 }
 git_info() {
   if [[ $(parse_git_branch) ]]; then
-    printf '\uf09b'
+    printf '󰊢'
     parse_git_branch
   fi
 }
@@ -49,8 +49,10 @@ setopt PROMPT_SUBST
 export PROMPT='$COL_DIR ╭ %~ $(git_info)
 ╰─$COL_ARCH  $COL_NORM'
 
+source "$ZDOTDIR/.launchrc"
 source "$ZDOTDIR/.bindrc"
 source "$ZDOTDIR/.aliasrc"
 source "$ZDOTDIR"/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source "$ZDOTDIR"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source "$ZDOTDIR/.launchrc"
+# Nope, you don't get any of that!
+source "$ZDOTDIR/.secretrc"

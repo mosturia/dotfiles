@@ -8,6 +8,7 @@ alias "xo"="xdg-open"
 alias "ls"='ls --color=auto'
 alias "yt"="yt-dlp"
 alias "yt-music"="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 320k"
+alias "mpv"="mpv --vo=gpu-next tone-mapping=bt.2446a" # Otherwise HDR content in SDR looks off...
 
 alias "DResolve"="LD_PRELOAD=/usr/lib64/libglib-2.0.so /opt/resolve/bin/resolve"
 alias "zsh-conf"="micro $HOME/.config/zsh/.zshrc"
@@ -19,8 +20,15 @@ alias "npp"="ncmpcpp"
 alias "hibernate"="systemctl hibernate"
 alias "syslyze"="systemd-analyze"
 alias config='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
-alias "current_wal"="chafa ~/.config/hypr/scripts/current_wal"
+alias "current_wal"="echo $(realpath ~/.config/hypr/scripts/current_wal) && chafa ~/.config/hypr/scripts/current_wal"
 alias "e"="$EDITOR"
+alias "ls"="eza --icons --group-directories-first"
+alias "ll"="ls -lh"
+alias "cat"="bat --paging=never"
+alias "pat"="bat --paging=always"
+alias "lf"="yazi"
+alias "nerd"="firefox https://www.nerdfonts.com/cheat-sheet"
+alias cf='cd "$(find . -maxdepth 5 -type d -print | fzf)"'
 
 ### In case I prefer to use toothfetch from an alias instead of a script...
 #alias "toothfetch"="clear && fastfetch -c $HOME/.config/fastfetch/toothfetch.jsonc -l $(randimg.sh $HOME/Pictures/neofetch_images/t)"
@@ -29,9 +37,9 @@ alias "yeet-orphans"="paru -Qqd | paru -Rnsu -"
 
 ## Aliases that makes using Wayland/XWayland better
 #alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && export XWAYLAND_NO_GLAMOR=1 && codium" # Disables GPU acceleration
-alias "obsidian"="echo 'WARNING : using an alias because of Wayland lmfao' && obsidian --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations" # Enables Wayland support
-alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && codium --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
-alias "code"="echo 'WARNING : using an alias because of Wayland lmfao' && code --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
+alias "obsidian"="echo 'WARNING : using an alias because of Wayland lmfao' && obsidian --disable-features=WaylandFractionalScale--ozone-platform=wayland --enable-features=WaylandWindowDecorations" # Enables Wayland support
+alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && codium --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
+#alias "code"="echo 'WARNING : using an alias because of Wayland lmfao' && code --disable-features=WaylandFractionalScaleV1 --ozone-platform=wayland --enable-features=WaylandWindowDecorations"
 
 ## Aliases specific to some workflows
 alias "phps"="php -S localhost:8008 & firefox localhost:8008" # php moment
@@ -43,3 +51,5 @@ alias "mb"="chafa $HOME/Pictures/random_stuff/neuron.png"
 alias "vibe"="sh ~/.local/bin/vibe.sh"
 alias "vibe-term"="mpv-term ~/Pictures/gifs/vibe_final.gif --loop"
 #alias "neofetch"="neofetch && mpv --no-video ~/Documents/sfx/Vine\ boom\ sound\ effect\ \[Oc7Cin_87H4\].mp3 2>&1 /dev/null"
+alias "icat"="kitty +kitten icat"
+alias "rofimoji"="rofi -modi emoji -show emoji"

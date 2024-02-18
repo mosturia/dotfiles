@@ -1,3 +1,3 @@
 #!/bin/sh
-chosen=$(find "$HOME/Pictures/Wallpapers/" -type f | grep '.jpg\|.jpeg\|.png\|.webp' | sort | rofi -dmenu -i -p " 󰋩 ")
+chosen=$(find -L "$HOME/Pictures/Wallpapers/" -type f | grep '.jpg\|.jpeg\|.png\|.webp' | sort | rofi -dmenu -i -p " 󰋩 ")
 hywal "$chosen"

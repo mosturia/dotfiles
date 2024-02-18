@@ -5,6 +5,9 @@
 # INFO : both swaybg and swww are supported in this script, so swap at will by commenting/uncommenting anything related to either.
 # I prefer to use swaybg since I don't care about animated wallpapers and swww takes a lot of system resources.
 
+export SWWW_TRANSITION=center
+export SWWW_TRANSITION_DURATION=1
+
 # In case the wallpaper is a symlink, since ~/.config/hypr/scripts/current_wal is one
 wallpaper=$(realpath "$1")
 if test $wallpaper -z
@@ -17,7 +20,7 @@ else
 	
 	ln -sf "$wallpaper" "$HOME/.config/hypr/scripts/current_wal" # Creating a symlink in order to keep the current wallpaper for next boot if using swaybg
 	killall waybar # Waybar and swaync need to be killed as they don't refresh their config dynamically
-	killall swaybg
+	#killall swaybg
 	killall swaync
 
 	echo "=========================="
@@ -34,7 +37,7 @@ else
 
 	waybar &
 	swaync &
-	#swww img "$wallpaper" # Variables are set in ~/.config/hypr/conf/env.conf
-	swaybg -i "$wallpaper" -m fill &
+	swww img "$wallpaper"
+	#swaybg -i "$wallpaper" -m fill &
 fi
 killall hywal # In case a previous attempt at switching was made and swaybg was too "slow"...

@@ -19,6 +19,7 @@ This config may or may not work depending on your config, especially since I'm r
 - Qt/GTK theme : Sweet Ambar Blue/Graphite-Dark
 - Shell : zsh
 - Terminal emulator : [kitty](https://sw.kovidgoyal.net/kitty/)
+- File managers : Thunar, yazi
 - Color scheme generation utility : [pywal](https://github.com/dylanaraps/pywal)
 - Audio EQ (and more) : [EasyEffects](https://github.com/wwmm/easyeffects)
 - Text editors : Micro, VSCode, VSCodium, Neovim with lazyvim (barely, hasn't changed)

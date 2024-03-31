@@ -13,25 +13,17 @@
     padding-right: 15px;
     font-weight: normal;
     font-style: normal;
-    border-radius: 100px;
 }
 */
 
 window{
-	border: solid 2px;
+	border-bottom: solid 2px;
 	border-color: @color2;
-	border-radius: 100px;
 }
 
 window#waybar{
 	background: @color0Alpha;
     color: @foreground;
-    border-radius: 100px;
-}
-
-window#waybar > box{
-    border-radius: 100px;
-	box-shadow: 0px 0px 0px @color0;
 }
 
 tooltip{

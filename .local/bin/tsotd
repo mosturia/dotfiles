@@ -9,11 +9,10 @@ else
   	if [ "$1" = "-c" ]; then
   	  	clear
   	  	fi
+  	chafa --animate on --scale max --center true --margin-bottom 2 "$FILE" # set the margin to whatever height your prompt takes
+  	FILE_OUT="$(echo $FILE | sed 's|^/home/[^/]*|~|')" # Replaces home by ~
 	if [ "$1" = "-p" ]; then
-		echo "$FILE"
-	else
-		chafa --animate on --scale max --center true --margin-bottom 2 "$FILE" # set the margin to whatever height your prompt takes
-		FILE_OUT="$(echo $FILE | sed 's|^/home/[^/]*|~|')" # Replaces home by ~
-		#echo "λ $FILE_OUT" # probably becoming an option soon
+		echo "λ $FILE_OUT"
 	fi
+	echo "" # Some commands like time won't escape the print
 fi

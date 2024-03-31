@@ -1,58 +1,12 @@
+@import "~/.config/rofi/themes/pywal.rasi"
+
 configuration {
   modi: "window,drun,ssh,combi";
   display-drun: " 󰣇 ";
   font: "Roboto Mono Nerd 12";
   icon-theme : "Kora Icons";
   combi-modi: "window,drun,ssh";
-}
-
-@import "~/.cache/wal/colors-rofi-dark"
-
-*{
-  background-color: transparent;
-}
-
-window{
-	width: env(WIDTH, 75%);
-	height: env(HEIGHT, 75%);
-  	border: 2px;
-	border-color: @selected-normal-background;
-	border-radius: 10px ;
-}
-
-element-icon{
-  border-radius: 10px;
-}
-
-textbox{
-	padding: 1em;
-}
-
-inputbar{
-	padding: 0.2em;
-}
-
-mainbox{
-  border-radius: 10px     ;	
-}
-
-entry {
-  placeholder: "Type anything";
-  cursor: pointer               ;
- }
-
-listview{
-    border: 0px 0px 0px;
-	columns: 2;
-}
-
-element {
-  orientation: horizontal ;
-  spacing: 20px           ;
-  border-radius: 10px     ;
-  padding: 0.2em;
-}
-
-element-icon {
-  size: 2em               ;
+  terminal: "foot";
+  run-shell-command: "{terminal} -e {cmd}";
+  sidebar-mode: true;
 }

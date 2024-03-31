@@ -4,7 +4,6 @@
 @define-color foreground rgb({foreground.rgb});
 @define-color foregroundAlpha rgba({foreground.rgb},0.5);
 
-
 @define-color color0 rgb({color0.rgb});
 @define-color color0Alpha rgba({color0.rgb},0.5);
 

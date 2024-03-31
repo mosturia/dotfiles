@@ -1,0 +1,48 @@
+@import "~/.cache/wal/colors-rofi-dark"
+*{
+  background-color: transparent;
+}
+
+window{
+	width: env(WIDTH, 50%);
+	height: env(HEIGHT, 50%);
+  	border: 2px;
+	border-color: @active-background;
+	border-radius: 10px ;
+}
+
+element-icon{
+  border-radius: 10px;
+}
+
+textbox{
+	padding: 1em;
+}
+
+inputbar{
+	padding: 0.2em;
+}
+
+mainbox{
+  border-radius: 10px     ;	
+}
+
+entry {
+  placeholder: "Type anything";
+  cursor: pointer               ;
+ }
+
+listview{
+    border: 0px 0px 0px;
+}
+
+element {
+  orientation: horizontal ;
+  spacing: 10px;
+  border-radius: 10px;
+  padding: 0.2em;
+}
+
+element-icon {
+  size: 2em               ;
+}

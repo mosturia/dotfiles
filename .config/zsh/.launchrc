@@ -1,8 +1,8 @@
 #!/bin/zsh
 # Commands launched at shell start
 
-cat ~/.cache/wal/sequences
+#cat ~/.cache/wal/sequences
 #tsotd
-#toothfetch
 #fastfetch
+sleep 0.02 && toothfetch
 #quote

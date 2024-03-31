@@ -5,16 +5,14 @@
         "separator": "• "
     },
     "logo":{
-    	"type": "small",
-    	"padding":{
-    		"top": 3
-    	}
+    	"type": "sixel",
+    	"width": 30
     },
     "modules": [
         "break",
         {
             "type": "custom",
-            "format": "     \u001b[90mStop with the fetches!!!"
+            "format": "\u001b[90munderidoderidoderiododeriodoo - W.C"
         },
         {
             "type": "custom",
@@ -25,6 +23,10 @@
             "key": "  ",
             "format": "{3}"
         },
+        {
+                    "type": "host",
+                    "key": "  "
+                },
         {
             "type": "kernel",
             "key": "  "

@@ -4,9 +4,6 @@
 	"spacing": 5,
     "layer": "top",
     "position": "top",
-    "margin-left": 10,
-    "margin-right": 10,
-    "margin-top": 5,
     "reload_style_on_change": true,
     "include": [
       "~/.config/waybar/modules.json"

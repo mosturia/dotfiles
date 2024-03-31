@@ -19,8 +19,13 @@
 
 @define-color bg-selected @color6Alpha;
 
+*{
+	color: @foreground;
+}
+
 .notification-row {
   outline: none;
+  border-radius: 15px;
 }
 
 .notification-row:focus,
@@ -29,7 +34,7 @@
 }
 
 .notification {
-  border-radius: 0px;
+  border-radius: 15px;
   margin: 6px 12px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
     0 2px 6px 2px rgba(0, 0, 0, 0.3);
@@ -59,7 +64,7 @@
 .notification-content {
   background: transparent;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 .close-button {
@@ -101,7 +106,7 @@
 }
 
 .notification-default-action {
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 /* When alternative actions are visible */
@@ -111,7 +116,7 @@
 }
 
 .notification-action {
-  border-radius: 0px;
+  border-radius: 15px;
   border-top: none;
   border-right: none;
 }
@@ -153,12 +158,14 @@
 }
 
 .image {
+	border-radius: 15px;
+	outline: 2px @noti-border-color;
 }
 
 .body-image {
   margin-top: 6px;
   background-color: white;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 .summary {
@@ -273,15 +280,17 @@
 
 /* Buttons widget */
 .widget-buttons-grid {
+  font-size: large;
   padding: 8px;
   margin: 8px;
-  border-radius: 12px;
-  background-color: @noti-bg;
+  border-radius: 15px;
+  background-color: @noti-bg
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button{
+	margin: 4px;
   background: @noti-bg;
-  border-radius: 12px;
+  border-radius: 15px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
@@ -292,6 +301,11 @@
 .widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: transparent;
+}
+
+.topbar-buttons>button {
+    border: none;
+    background: transparent
 }
 
 /* .AnyName { Name defined in config after #

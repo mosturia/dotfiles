@@ -31,7 +31,7 @@
         "orientation": "horizontal",
         "transition-duration": 300,
         "drawer": {
-            "transition-left-to-right": "true",
+            "transition-left-to-right": "false",
             "transition-duration": 300
         },
         "modules": [
@@ -40,6 +40,13 @@
             "memory"
         ]
     },
+    "hyprland/window": {
+            "rewrite": {
+                "(.*) - Firefox": "$1",
+                "(.*) - kitty": "[$1]"
+            },
+            "separate-outputs": true
+        },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
@@ -60,6 +67,11 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
+    "custom/randpaper": {
+            "on-click": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(find $HOME/Pictures/Wallpapers/favorites | sort -R |  tail -n 1)",
+            "format": " 󰏘 ",
+           	"tooltip": "false"
+        },
     "clock": {
         "format": " {:%H:%M}",
         "format-alt": " {:%a %d %b %H:%M}",
@@ -67,7 +79,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "network": {
-        "on-click": "kitty -e nmtui",
+        "on-click": "foot -e nmtui",
         "format-disconnected": "󰖪 0% ",
         "format-ethernet": "󰈀 100% ",
         "format-linked": "{ifname} (No IP)",
@@ -91,7 +103,7 @@
     "group/settings": {
         "orientation": "horizontal",
         "drawer": {
-            "transition-left-to-right": "true",
+            "transition-left-to-right": "false",
             "transition-duration": 300
         },
         "modules": [
@@ -104,28 +116,32 @@
         "spacing": 8
     },
     "mpris": {
-        "format": "MPRIS • {player_icon} {dynamic}",
-        "format-paused": "MPRIS • {status_icon} <i>{dynamic}</i>",
+        "format": "{player} • {player_icon} {dynamic}",
+        "format-paused": "{player} • {status_icon} <i>{dynamic}</i>",
         "player-icons": {
-            "default": "󰐌",
-            "mpv": "󰎆"
+            "default": "",
         },
         "status-icons": {
-            "paused": "󰏥"
+            "paused": ""
         },
         "max-length": 60,
         "interval": 1
     },
+    "custom/pomodoro": {
+    	"format": "{}",
+    	"exec": "tomato -t",
+    	"interval": 1
+    },
     "mpd": {
-        "format": "MPD • {stateIcon}{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format": "MPD • {stateIcon}{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist}  {title}  {album} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
         "format-disconnected": "MPD • Disconnected ",
         "format-stopped": "MPD • {consumeIcon} {randomIcon} {repeatIcon}{ singleIcon} Stopped ",
         "interval": 1,
         "consume-icons": {
-            "on": " 󰲸 " // Icon shows only when "consume" is on
+            "on": " 󰲸 "
         },
         "random-icons": {
-            "off": "", // Icon grayed out when "random" is off
+            "off": "",
             "on": ""
         },
         "repeat-icons": {

@@ -43,3 +43,5 @@ cat $HOME/.cache/wal/sequences
 # Editor stuff
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh

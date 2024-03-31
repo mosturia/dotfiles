@@ -23,6 +23,7 @@ This config may or may not work depending on your config, especially since I'm r
 - OS : Arch Linux
 - DE/WM : Hyprland
 - Qt/GTK theme : Orchis Dark
+- Icon theme : WhiteSur-Dark
 - Shell : zsh
 - Terminal emulator : foot / [kitty](https://sw.kovidgoyal.net/kitty/)
 - Text editors : Micro, VSCode, VSCodium, Neovim (not really lol)

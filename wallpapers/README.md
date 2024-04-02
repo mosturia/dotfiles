@@ -1,4 +1,4 @@
-# .
+# wallpapers
 
 ![od_brain.jpg](od_brain.jpg)
 
@@ -29,4 +29,6 @@
 ![roanna-peroz-httyd.png](roanna-peroz-httyd.png)
 
 ![best_duo1.png](best_duo1.png)
+
+![stupidgiant_skeleton_wide.png](stupidgiant_skeleton_wide.png)
 

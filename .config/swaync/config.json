@@ -1,9 +1,8 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "top",
+  "positionY": "center",
   "layer": "overlay",
-  "control-center-layer": "top",
   "layer-shell": true,
   "cssPriority": "application",
   "control-center-margin-top": 10,
@@ -50,7 +49,6 @@
     "inhibitors",
     "title",
     "dnd",
-    "buttons-grid",
     "mpris",
     "volume",
     "notifications"
@@ -76,45 +74,6 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 15
-    },
-    "volume":{
-    	
-    },
-    "buttons-grid": {
-                "actions": [
-                    {
-                        "label": "󰐥",
-                        "command": "systemctl poweroff"
-                    },
-                    {
-                        "label": "󰜉",
-                        "command": "systemctl reboot"
-                    },
-                    {
-                        "label": "󰌾",
-                        "command": "hyprlock"
-                    },
-                    {
-                                            "label": "",
-                                            "command": "systemctl suspend"
-                                        },
-                    {
-                        "label": "󰍃",
-                        "command": "hyprctl dispatch exit"
-                    },
-                                        {
-                        "label": "󰕾",
-                        "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-                    },
-                    {
-                        "label": "󰍬",
-                        "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-                    },
-                    {
-                        "label": "󰂯",
-                        "command": "blueman-manager"
-                    }
-                ]
-            }
+    }
   }
 }

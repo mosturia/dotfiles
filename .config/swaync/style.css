@@ -375,3 +375,7 @@
 .widget-inhibitors > button:hover {
   background: @noti-bg-hover;
 }
+
+.blank-window {  
+   background: transparent;  
+}

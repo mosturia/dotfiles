@@ -40,7 +40,7 @@ tooltip{
 	border-radius: 10px;
 }
 
-#battery, #network, #pulseaudio, #cpu, #memory, #custom-randpaper, #custom-pomodoro{
+#battery, #network, #pulseaudio, #cpu, #memory, #custom-randpaper, #custom-pomodoro, #custom-face, #custom-notification{
     margin: 0px 10px;
 }
 
@@ -90,9 +90,21 @@ tooltip{
     margin: 0 10px;
 }
 
-#custom-notifications{
-    margin: 0px 5px;
+#custom-notification, #custom-randpaper{
+	color: @color6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    background-image: url("/home/molives/.face");
+    border: solid 1px @color6;
+    padding: 0px 13px;
 }
+
+#custom-randpaper{
+	background-image: url("/home/molives/.config/hypr/scripts/current_wal")
+}
+
 
 #general, #clock, #custom-randpaper, #custom-pomodoro
 {
@@ -106,6 +118,8 @@ tooltip{
 	color: white;
 }
 
-#custom-randpaper{
-	color: @color6;
+#window{
+	border-radius: 100px;
+	background-color: @color0Alpha;
+	color: @color1;
 }

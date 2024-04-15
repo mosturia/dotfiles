@@ -43,21 +43,29 @@
     "hyprland/window": {
             "rewrite": {
                 "(.*) - Firefox": "$1",
-                "(.*) - kitty": "[$1]"
+                "(.*) - kitty": "[$1]",
+                "(.*) - foot": "[$1]"
             },
             "separate-outputs": true
         },
+    "sway/workspaces": {
+    	"persistent-workspaces": {
+    		"3": [],
+    		"4": ["eDP-1"],
+    		"5": ["eDP-1", "DP-2"]
+    	}
+    },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "󰂚<span foreground='red'><sup></sup></span>",
-            "none": "󰂚",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "notification": "",
+            "none": "  ",
+            "dnd-notification": "",
             "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-notification": "",
             "inhibited-none": "󰂚",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-notification": "",
             "dnd-inhibited-none": ""
         },
         "return-type": "json",
@@ -68,7 +76,9 @@
         "escape": true
     },
     "custom/randpaper": {
-            "on-click": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(find $HOME/Pictures/Wallpapers/favorites | sort -R |  tail -n 1)",
+            "on-click": "rofi-paper",
+            "on-click-right": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(find $HOME/Pictures/Wallpapers/favorites | sort -R |  tail -n 1)",
+            "on-click-middle": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(realpath $(find $HOME/Pictures/Wallpapers/ | sort -R |  tail -n 1))",
             "format": " 󰏘 ",
            	"tooltip": "false"
         },
@@ -103,12 +113,12 @@
     "group/settings": {
         "orientation": "horizontal",
         "drawer": {
-            "transition-left-to-right": "false",
+            "transition-left-to-right": "true",
             "transition-duration": 300
         },
         "modules": [
-            "pulseaudio",
-            "network"
+        	"pulseaudio",
+        	"network"
         ]
     },
     "tray": {
@@ -124,7 +134,7 @@
         "status-icons": {
             "paused": ""
         },
-        "max-length": 60,
+        "max-length": 75,
         "interval": 1
     },
     "custom/pomodoro": {
@@ -185,7 +195,6 @@
         "modules": [
             "group/system",
             "group/settings",
-            "custom/notification"
         ]
     }
 }

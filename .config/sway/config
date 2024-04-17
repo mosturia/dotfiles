@@ -2,37 +2,49 @@ input * {
     xkb_layout "fr,us"
 }
 
-
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 set $term foot
-set $explorer thunar
+set $file_manager thunar
 set $menu rofi -show drun -show-icons  
-
 
 set $GBM_BACKEND nvidia-drm
 set $__GLX_VENDOR_LIBRARY_NAME nvidia
 set $WLR_NO_HARDWARE_CURSORS 1
 set $__GL_GSYNC_ALLOWED 1
 
+exec waybar
+exec swaync
+exec "hywal ~/.config/hypr/scripts/current_wal"
+exec wl-paste --watch cliphist store
 
+include @sysconfdir@/sway/config.d/*
+gaps inner 5
+gaps outer 5
+titlebar_padding 1
+titlebar_border_thickness 0
 
-    bindsym $mod+Return exec $term
-    bindsym $mod+q kill
-    bindsym $mod+space exec $menu
-    floating_modifier $mod normal
-    bindsym $mod+Shift+c reload
-    bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+floating_modifier $mod normal
 
-    #bindsym $mod+$left focus left
-    #bindsym $mod+$down focus down
-    #bindsym $mod+$up focus up
-    #bindsym $mod+$right focus right
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
+bindsym $mod+e exec $file_manager
+bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+space exec $menu
+bindsym $mod+F1 exec "<<killall waybar; waybar"
+
+bindsym $mod+Shift+c reload
+bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+#bindsym $mod+$left focus left
+#bindsym $mod+$down focus down
+#bindsym $mod+$up focus up
+#bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
@@ -84,20 +96,20 @@ set $__GL_GSYNC_ALLOWED 1
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+v floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+v focus mode_toggle
+    bindsym $mod+tab focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
+#-
 # Scratchpad:
 #
     # Sway has a "scratchpad", which is a bag of holding for windows.
@@ -133,16 +145,3 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-exec waybar
-exec swaync
-
-include @sysconfdir@/sway/config.d/*
-
-gaps inner 10
-gaps outer 10
-
-titlebar_padding 1
-titlebar_border_thickness 0
-
-bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy

@@ -14,7 +14,7 @@
         "break",
         {
             "type": "custom",
-            "format": "        \u001b[90mᛏᛟᛟᚦᛚᛖᛊᛊ   ᚲᚱᛟᚲᛗᚢ"
+            "format": "        \u001b[90mᛏᛟᛟᚦᛚᛖᛊᛊ \u001b[95m  \u001b[90mᚲᚱᛟᚲᛗᚢ"
         },
         {
             "type": "custom",

@@ -1,5 +1,4 @@
 export MOZ_ENABLE_WAYLAND=1
-export GTK_USE_PORTAL=1
 export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 export QT_QPA_PLATFORMTHEME=qt5ct
 HISTFILE="$XDG_STATE_HOME"/zsh/history
@@ -19,3 +18,8 @@ eval "$(ssh-agent -s)"
 #  echo "Executing $DE ..."
 #  exec $DE
 #fi
+
+if [ $XDG_CURRENT_DESKTOP="Hyprland" ]
+then
+	hyprctl plugin load /home/molives/Documents/Repositories/teeth/Hyprspace/builddir/libhyprspace.so
+fi

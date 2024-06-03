@@ -28,38 +28,36 @@
         "interval": 5
     },
     "group/system": {
-        "orientation": "horizontal",
+        "orientation": "inherit",
         "transition-duration": 300,
         "drawer": {
-            "transition-left-to-right": "false",
+            "transition-left-to-right": "true",
             "transition-duration": 300
         },
         "modules": [
             "battery",
             "cpu",
-            "memory"
+            "memory",
+            "custom/updates"
         ]
     },
     "hyprland/window": {
+    		"icon": true,
             "rewrite": {
                 "(.*) - Firefox": "$1",
                 "(.*) - kitty": "[$1]",
-                "(.*) - foot": "[$1]"
+                "(.*) - foot": "[$1]",
+                "": "  NULL"
             },
             "separate-outputs": true
         },
     "sway/workspaces": {
-    	"persistent-workspaces": {
-    		"3": [],
-    		"4": ["eDP-1"],
-    		"5": ["eDP-1", "DP-2"]
-    	}
     },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "",
+            "notification": "●",
             "none": "  ",
             "dnd-notification": "",
             "dnd-none": "",
@@ -75,12 +73,23 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
+    "custom/updates": {
+           "format": "{} {icon}",
+           "return-type": "json",
+           "format-icons": {
+               "has-updates": "󱍷",
+               "updated": "󰂪"
+           },
+           "exec-if": "which waybar-module-pacman-updates",
+           "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300",
+           "on-click": "foot -e arch-update"
+       },
     "custom/randpaper": {
             "on-click": "rofi-paper",
             "on-click-right": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(find $HOME/Pictures/Wallpapers/favorites | sort -R |  tail -n 1)",
             "on-click-middle": "export SWWW_TRANSITION_POS=$(hyprctl cursorpos) && hywal $(realpath $(find $HOME/Pictures/Wallpapers/ | sort -R |  tail -n 1))",
             "format": " 󰏘 ",
-           	"tooltip": "false"
+           	"tooltip": "false",
         },
     "clock": {
         "format": " {:%H:%M}",
@@ -127,7 +136,7 @@
     },
     "mpris": {
         "format": "{player} • {player_icon} {dynamic}",
-        "format-paused": "{player} • {status_icon} <i>{dynamic}</i>",
+        "format-paused": "{player} • {status_icon} {dynamic}",
         "player-icons": {
             "default": "",
         },
@@ -143,9 +152,9 @@
     	"interval": 1
     },
     "mpd": {
-        "format": "MPD • {stateIcon}{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {artist}  {title}  {album} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-        "format-disconnected": "MPD • Disconnected ",
-        "format-stopped": "MPD • {consumeIcon} {randomIcon} {repeatIcon}{ singleIcon} Stopped ",
+        "format": "MPD • {stateIcon}{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {title} • {artist} • {album} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "format-disconnected": "MPD • Disconnected",
+        "format-stopped": "MPD • {consumeIcon} {randomIcon} {repeatIcon}{ singleIcon} Stopped",
         "interval": 1,
         "consume-icons": {
             "on": " 󰲸 "
@@ -166,7 +175,7 @@
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)",
-        "max-length": 60
+        "max-length": 75
     },
     "group/media": {
         "orientation": "horizontal",
@@ -189,6 +198,24 @@
         "on-click": "activate",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
         "on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+    "wlr/taskbar": {
+    	"format": "{icon}",
+    	"icon-size": 12,
+    	"icon-theme": "WhiteSur-Dark",
+    	"tooltip-format": "{title}",
+    	"on-click": "activate",
+    	"on-click-middle": "close",
+    	"ignore-list": [
+    	    "Alacritty"
+    	],
+    	"app_ids-mapping": {
+    		"firefoxdeveloperedition": "firefox-developer-edition"
+    	},
+    	"rewrite": {
+    		"Firefox Web Browser": "Firefox",
+    		"Foot Server": "Terminal"
+    	}
     },
     "group/general": {
         "orientation": "horizontal",

@@ -4,11 +4,11 @@
 }
 
 window{
-	width: env(WIDTH, 50%);
-	height: env(HEIGHT, 50%);
+	width: env(WIDTH, 35%);
+	height: env(HEIGHT, 65%);
   	border: 2px;
 	border-color: @active-background;
-	border-radius: 10px ;
+	border-radius: 15px;
 }
 
 element-icon{
@@ -16,7 +16,7 @@ element-icon{
 }
 
 textbox{
-	padding: 1em;
+	padding: 2em;
 }
 
 inputbar{
@@ -24,12 +24,13 @@ inputbar{
 }
 
 mainbox{
-  border-radius: 10px     ;	
+  	background-position: center;
+  	border-radius: 15px     ;	
 }
 
 entry {
   placeholder: "Type anything";
-  cursor: pointer               ;
+  cursor: pointer;
  }
 
 listview{
@@ -38,9 +39,9 @@ listview{
 
 element {
   orientation: horizontal ;
-  spacing: 10px;
-  border-radius: 10px;
-  padding: 0.2em;
+  spacing: 15px;
+  border-radius: 15px;
+  padding: 0.45em;
 }
 
 element-icon {

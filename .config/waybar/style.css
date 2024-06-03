@@ -5,6 +5,7 @@
 	font-family: 'Roboto Mono Nerd';
 	font-size: 14px;
 	margin: 2px;
+	color: @foreground;
 }
 
 /*
@@ -17,21 +18,12 @@
 }
 */
 
-window{
-	border: solid 2px;
-	border-color: @color2;
-	border-radius: 100px;
-}
-
 window#waybar{
 	background: @color0Alpha;
+    border-radius: 100px;
+    border: solid 2px;
+    border-color: @color2;
     color: @foreground;
-    border-radius: 100px;
-}
-
-window#waybar > box{
-    border-radius: 100px;
-	box-shadow: 0px 0px 0px @color0;
 }
 
 tooltip{
@@ -40,23 +32,23 @@ tooltip{
 	border-radius: 10px;
 }
 
-#battery, #network, #pulseaudio, #cpu, #memory, #custom-randpaper, #custom-pomodoro, #custom-face, #custom-notification{
+#battery, #network, #pulseaudio, #cpu, #memory, #custom-pomodoro, #custom-face, #custom-notification{
     margin: 0px 10px;
 }
 
 #workspaces {
     background: @color0Alpha;
     border-radius: 100px;
-    padding: 2px;
+    padding: 1px;
+    font-weight: bolder;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 5px;
     border-radius: 100px;
-    color: @color16;
     background: @color0Alpha;
-    transition: all 0.3s cubic-bezier(.11, 1.09, .6, .96);
+    transition: all 0.45s cubic-bezier(0.55,0.55,0,1);
 }
 
 #workspaces button.active {
@@ -78,11 +70,15 @@ tooltip{
     background: @backgroundAlpha;
 }
 
+#window{
+	padding: 2px;
+}
+
 #media{
 	border-radius: 100px;
-	background: linear-gradient(225deg, @backgroundAlpha 50%, @color2Alpha 50%);
+	background: linear-gradient(225deg, @backgroundAlpha 50%, @color1Alpha 50%);
 	background-color: @backgroundAlpha;
-	color: @color6;
+	color: @background;
 	font-weight: bolder;
 }
 
@@ -91,7 +87,6 @@ tooltip{
 }
 
 #custom-notification, #custom-randpaper{
-	color: @color6;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -99,12 +94,12 @@ tooltip{
     background-image: url("/home/molives/.face");
     border: solid 1px @color6;
     padding: 0px 13px;
+	margin: 0px;	
 }
 
 #custom-randpaper{
 	background-image: url("/home/molives/.config/hypr/scripts/current_wal")
 }
-
 
 #general, #clock, #custom-randpaper, #custom-pomodoro
 {
@@ -115,11 +110,10 @@ tooltip{
 
 #custom-pomodoro{
 	background-color: @color2;
-	color: white;
+	color: @foreground;
 }
 
 #window{
 	border-radius: 100px;
 	background-color: @color0Alpha;
-	color: @color1;
 }

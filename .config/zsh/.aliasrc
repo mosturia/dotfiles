@@ -7,11 +7,11 @@ alias "zconf"="$VISUAL $ZDOTDIR/.zshrc && zrel"
 alias "xo"="xdg-open"
 alias "ls"='ls --color=auto'
 alias "yt"="yt-dlp"
-alias "yt-music"="yt-dlp --embed-thumbnail -f bestaudio -x --audio-format mp3 --audio-quality 320k"
-alias "mpv"="mpv --vo=gpu-next tone-mapping=bt.2446a" # Otherwise HDR content in SDR looks off...
+alias "ytm"="yt-dlp --embed-thumbnail -f bestaudio -x --audio-quality 320k"
+alias "mpv"="mpv --vo=gpu-next --tone-mapping=spline --gamut-mapping-mode=auto"
 
 alias "DResolve"="LD_PRELOAD=/usr/lib64/libglib-2.0.so /opt/resolve/bin/resolve"
-alias "zsh-conf"="micro $HOME/.config/zsh/.zshrc"
+alias "zsh-conf"="$EDITOR $HOME/.config/zsh/.zshrc"
 alias "chafa-full"='chafa --center true --scale max --clear'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 alias "wc-xdg"="ls -a | wc -l"
@@ -26,7 +26,7 @@ alias "ls"="eza --icons --group-directories-first"
 alias "ll"="ls -lh"
 alias "cat"="bat --paging=never"
 alias "pat"="bat --paging=always"
-alias "lf"="yazi"
+alias "lf"="yy" # Alias lf to yazi
 alias "nerd"="firefox https://www.nerdfonts.com/cheat-sheet"
 alias cf='cd "$(find . -maxdepth 5 -type d -print | fzf)"'
 
@@ -44,6 +44,11 @@ alias "codium"="echo 'WARNING : using an alias because of Wayland lmfao' && codi
 ## Aliases specific to some workflows
 alias "phps"="php -S localhost:8008 & firefox localhost:8008"
 
+### Neutralino.js
+alias "nrun"="neu run -- --window-enable-inspector"
+alias "nbuild"="neu build"
+
+
 ## Distrobox
 alias "debian"="distrobox enter debian"
 
@@ -54,4 +59,17 @@ alias "vibe"="sh ~/.local/bin/vibe.sh"
 alias "vibe-term"="mpv-term ~/Pictures/gifs/vibe_final.gif --loop"
 alias "icat"="kitty +kitten icat"
 alias "rofimoji"="rofi -modi emoji -show emoji"
-alias "fastfetch"="fastfetch -l ~/.local/share/fetch_logos/fetch/arch-linux-2.png"
+alias "fastfetch"="fastfetch -l ~/.local/share/fetch_logos/fetch/lain1.jpg"
+alias sortty='python3 /usr/local/bin/sortty-bin/sortty.py'
+alias atac="atac -d ~/Documents/atac"
+
+## git
+
+alias "g"="git"
+alias "gp"="git pull"
+alias "gps"="git push"
+alias "gc"="git commit -m"
+alias "gck"="git switch"
+alias "gb"="git rebase"
+
+alias "cp"="cp -i"

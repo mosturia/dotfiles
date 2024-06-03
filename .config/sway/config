@@ -34,7 +34,7 @@ bindsym $mod+c exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+space exec $menu
-bindsym $mod+F1 exec "<<killall waybar; waybar"
+bindsym $mod+F1 exec "killall waybar; waybar"
 
 bindsym $mod+Shift+c reload
 bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'

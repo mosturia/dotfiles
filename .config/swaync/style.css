@@ -160,6 +160,8 @@
 .image {
 	border-radius: 15px;
 	outline: 2px @noti-border-color;
+	border: solid 2px @noti-border-color;
+
 }
 
 .body-image {

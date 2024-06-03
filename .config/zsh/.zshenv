@@ -1,10 +1,18 @@
 ## History vars
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
 
 ## Variables
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="micro" # imma pussy lol
+export VISUAL="micro"
 export EDGUI="codium"
 export ZDOTDIR="$HOME"/.config/zsh
 

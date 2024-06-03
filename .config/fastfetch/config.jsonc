@@ -5,14 +5,14 @@
         "separator": "• "
     },
     "logo":{
-    	"type": "sixel",
+    "type": "sixel",
     	"width": 30
     },
     "modules": [
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90munderidoderidoderiododeriodoo - W.C"
+            "format": "\u001b[90m            Who is Lain? 󰖟"
         },
         {
             "type": "custom",

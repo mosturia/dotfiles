@@ -1,10 +1,9 @@
 @import "~/.config/rofi/themes/pywal.rasi"
 
 configuration {
-  modi: "window,drun,ssh,combi";
+  modi: "window,drun,ssh,combi,filebrowser,recursivebrowser";
   display-drun: " 󰣇 ";
   font: "Roboto Mono Nerd 12";
-  icon-theme : "Kora Icons";
   combi-modi: "window,drun,ssh";
   terminal: "foot";
   run-shell-command: "{terminal} -e {cmd}";

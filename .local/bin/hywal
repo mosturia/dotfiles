@@ -3,25 +3,37 @@
 # Used by the rofi "frontend" accessible with SUPER+W.
 
 # In case the wallpaper is a symlink, since ~/.config/hypr/scripts/current_wal is one
-wallpaper=$(realpath "$1")
-if test $wallpaper -z
+if test "$1" = "-h"
 then
-	echo "No selection - skipping..."
-else
-	echo "=========================="
-	echo "Setting wallpaper $wallpaper"
-	echo "=========================="
-	
-	ln -sf "$wallpaper" "$HOME/.config/hypr/scripts/current_wal"
-	#killall swaybg
+	echo "HYWAL - A wallpaper setter util for Hyprland and Pywal"
+	echo "Usage: hywal <file> [ptions]"
+	echo "Options:"
+	echo "	-s - don't send notification to server"
+else 
+	wallpaper=$(realpath "$1")
+	if test $wallpaper -z
+	then
+		echo "No selection - skipping..."
+	else 
+		echo "=========================="
+		echo "Setting wallpaper $wallpaper"
+		echo "=========================="
+		
+		ln -sf "$wallpaper" "$HOME/.config/hypr/scripts/current_wal"
+		#killall swaybg
 
-	echo "=========================="
-	echo "Updating pywal colors"
-	echo "=========================="
+		echo "=========================="
+		echo "Updating pywal colors"
+		echo "=========================="
 
-	wal -i "$wallpaper"
-	pywalfox update
-	swww img "$wallpaper"
-	swaync-client -rs
-	#swaybg -i "$wallpaper" -m fill &
+		wal -i "$wallpaper"
+		pywalfox update
+		swww img "$wallpaper"
+		swaync-client -rs
+		#swaybg -i "$wallpaper" -m fill &
+		if test "$2" != "-s"
+		then
+			notify-send -e -a "Hywal" -i "$wallpaper" "New wallpaper applied"
+		fi
+fi
 fi

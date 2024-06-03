@@ -12,7 +12,7 @@ else
   	chafa --animate on --scale max --center true --margin-bottom 2 "$FILE" # set the margin to whatever height your prompt takes
   	FILE_OUT="$(echo $FILE | sed 's|^/home/[^/]*|~|')" # Replaces home by ~
 	if [ "$1" = "-p" ]; then
-		echo "λ $FILE_OUT"
+		echo "  $FILE_OUT"
 	fi
 	echo "" # Some commands like time won't escape the print
 fi

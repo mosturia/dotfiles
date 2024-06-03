@@ -4,7 +4,7 @@
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 ## Binds tsotd to CTRL+t
-bindkey -s '^t' 'tsotd^M'
+bindkey -s '^a' 'tsotd^M'
 ## Binds codium to CTRL+o (only in a display server)
 bindkey -s '^o' '$EDGUI .^M'
 ## You get the idea...

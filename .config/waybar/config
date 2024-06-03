@@ -12,17 +12,18 @@
       "~/.config/waybar/modules.json"
     ],
     "modules-left": [
-      "custom/pomodoro",
+      "custom/randpaper",
 	  "sway/workspaces", // Sometimes I actually use sway
       "hyprland/workspaces",
-      "tray"
+      "hyprland/window",
+      "tray",
     ],
     "modules-center": [
       "group/media"
     ],
     "modules-right": [
-    "custom/randpaper",
     "group/general",
+    "custom/pomodoro",
     "clock",
     "custom/notification"
       ]

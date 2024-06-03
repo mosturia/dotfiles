@@ -122,5 +122,19 @@
 
 ![toothless60.jpg](toothless60.jpg)
 
-![boing__by_jackthevulture_d8ldrjh-pre.jpg](boing__by_jackthevulture_d8ldrjh-pre.jpg)
+![toothless61.jpg](toothless61.jpg)
+
+![toothless62.jpg](toothless62.jpg)
+
+![toothless64.jpg](toothless64.jpg)
+
+![toothless65.jpg](toothless65.jpg)
+
+![Fanart](Fanart)
+
+![toothless63.jpg](toothless63.jpg)
+
+![toothless66.jpg](toothless66.jpg)
+
+![toothless67.jpg](toothless67.jpg)
 

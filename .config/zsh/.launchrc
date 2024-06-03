@@ -4,5 +4,5 @@
 #cat ~/.cache/wal/sequences
 #tsotd
 #fastfetch
-sleep 0.02 && toothfetch
+echo "" && toothfetch
 #quote

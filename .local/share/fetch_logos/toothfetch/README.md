@@ -132,9 +132,11 @@
 
 ![Fanart](Fanart)
 
-![toothless63.jpg](toothless63.jpg)
-
 ![toothless66.jpg](toothless66.jpg)
 
 ![toothless67.jpg](toothless67.jpg)
+
+![toothless68.jpg](toothless68.jpg)
+
+![toothless69.jpg](toothless69.jpg)
 
